@@ -63,5 +63,5 @@ To instantiate the PaleoSketchRecognizer you must first create a PaleoConfig. Th
 	*/
 	config = PaleoConfig.allOn();
 	config = PaleoConfig.basicPrimsOnly();
-`````````java
+`````````
 
