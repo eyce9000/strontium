@@ -1,6 +1,19 @@
+COPYRIGHT NOTICE
+----------
+We are still working on the license information for this project. Most code here is released under a BSD license, copyright the Sketch Recognition Lab of Texas A&M University.
+Where not indicated, please assume a BSD license. If you notice any inconsistencies please let us know as we are working to clean this code up.
+
+
 Strontium Library (SrL)
 ----------------------
-The Strontium Library is a collection of sketch recognition libraries.
+The Strontium Library is a collection of sketch recognition libraries. It is split into 6 distinct pieces:
+
+1. Core - This contains core classes for collecting and storing sketches, including Sketch, Stroke, Point and Shape.
+2. Recognition - This contains several sketch recognition libraries, of particular interest is PaleoSketch
+3. Distributed – This contains client/server code for a messaging system for performing distributed sketch recognition.
+4. Legacy – This contains some legacy dependencies, not needed for any new application.
+5. Swing UI - This contains a few basic Java Swing user interface classes
+6. Android UI - This contains a few basic Android user interface views
 
 
 Simple Example
