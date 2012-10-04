@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="srl.legacy">
+    <property environment="env"/>
+	<import file="../build.xml" />
+    <property name="srl.recognition.location" value="../recognition"/>
+    <property name="srl.core.location" value="../core"/>
+    <property name="srl.legacy.location" value="../legacy"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="srl.core.classpath">
+        <pathelement location="${srl.core.location}/bin"/>
+        <pathelement location="${srl.core.location}/lib/jackson-all-1.9.2.jar"/>
+        <pathelement location="${srl.core.location}/lib/simple-xml-2.6.5.jar"/>
+        <pathelement location="${srl.core.location}/lib/slf4j-api-1.6.4.jar"/>
+        <pathelement location="${srl.core.location}/lib/Jama-1.0.2.jar"/>
+        <pathelement location="${srl.core.location}/lib/android.jar"/>
+        <pathelement location="${srl.core.location}/lib/openawt.jar"/>
+    </path>
+	<path id="srl.recognition.classpath">
+        <pathelement location="${srl.recognition.location}/bin"/>
+        <path refid="srl.core.classpath"/>
+        <pathelement location="${srl.recognition.location}/lib/weka.jar"/>
+	</path>
+	<path id="srl.legacy.classpath">
+        <pathelement location="bin"/>
+        <path refid="srl.recognition.classpath"/>
+        <pathelement location="${srl.legacy.location}/lib/paleo.jar"/>
+        <pathelement location="${srl.legacy.location}/lib/xercesImpl.jar"/>
+        <pathelement location="${srl.legacy.location}/lib/xml-apis.jar"/>
+        <pathelement location="${srl.legacy.location}/lib/ecologylabFundamental.jar"/>
+	</path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    	<delete file="../build/${ant.project.name}*.jar" />
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+    	<buildnumber/>
+    	<property name="version-number" value="${major-version-number}-${build.number}" />
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="srl.legacy.classpath"/>
+        </javac>
+		<mkdir dir="../build" />
+
+	    <jar destfile="../build/${ant.project.name}-${major-version-number}.jar"
+	    basedir="bin"
+	    includes="**/*.class,**/*.java">
+        	<restrict>
+			<name name="**/*.class"/>
+	    	<archives>
+		        <zips>
+		          <fileset dir="lib" includes="**/*.jar" excludes="META-INF/CIVIL*"/>
+		        </zips>
+	      	</archives>
+			</restrict>
+        </jar>
+    </target>
+</project>

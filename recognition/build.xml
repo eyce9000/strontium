@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="srl.recognition">
+    <property environment="env"/>
+	<import file="../build.xml" />
+    <property name="srl.core.location" value="../core"/>
+    <property name="srl.recognition.location" value="../recognition"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="srl.core.classpath">
+        <pathelement location="${srl.core.location}/bin"/>
+        <pathelement location="${srl.core.location}/lib/jackson-all-1.9.2.jar"/>
+        <pathelement location="${srl.core.location}/lib/simple-xml-2.6.5.jar"/>
+        <pathelement location="${srl.core.location}/lib/slf4j-api-1.6.4.jar"/>
+        <pathelement location="${srl.core.location}/lib/Jama-1.0.2.jar"/>
+        <pathelement location="${srl.core.location}/lib/android.jar"/>
+        <pathelement location="${srl.core.location}/lib/openawt.jar"/>
+    </path>
+    <path id="srl.recognition.classpath">
+        <pathelement location="bin"/>
+        <path refid="srl.core.classpath"/>
+        <pathelement location="${srl.core.location}/lib/Jama-1.0.2.jar"/>
+        <pathelement location="${srl.core.location}/lib/jackson-all-1.9.2.jar"/>
+        <pathelement location="${srl.core.location}/lib/simple-xml-2.6.5.jar"/>
+        <pathelement location="${srl.core.location}/lib/slf4j-api-1.6.4.jar"/>
+        <pathelement location="lib/weka.jar"/>
+        <pathelement location="lib/libsvm.jar"/>
+        <pathelement location="lib/xercesImpl.jar"/>
+        <pathelement location="lib/xml-apis.jar"/>
+        <pathelement location="${srl.core.location}/lib/android.jar"/>
+        <pathelement location="${srl.core.location}/lib/openawt.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    	<delete file="../build/${ant.project.name}*.jar" />
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="build.xml" dir="${srl.core.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="build.xml" dir="${srl.core.location}" inheritAll="false" target="build-project"/>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+    	<buildnumber/>
+    	<property name="version-number" value="${major-version-number}-${build.number}" />
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="srl.recognition.classpath"/>
+        </javac>
+    	<mkdir dir="../build" />
+	    <jar destfile="../build/${ant.project.name}-${major-version-number}.jar"
+	         basedir="bin"
+	         includes="**/*.class,**/*.java"
+	         />
+    </target>
+</project>

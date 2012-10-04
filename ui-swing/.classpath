@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Sr Core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Sr Recognition"/>
+	<classpathentry kind="lib" path="/Sr Core/lib/Jama-1.0.2.jar"/>
+	<classpathentry kind="lib" path="/Sr Core/lib/slf4j-api-1.6.4.jar"/>
+	<classpathentry kind="lib" path="/Sr Core/lib/jackson-all-1.9.2.jar"/>
+	<classpathentry kind="lib" path="/Sr Core/lib/simple-xml-2.6.5.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/openawt"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
