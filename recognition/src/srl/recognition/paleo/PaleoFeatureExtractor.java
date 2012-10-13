@@ -37,13 +37,6 @@
  */
 package srl.recognition.paleo;
 
-import org.hhreco.classification.FeatureSet;
-import org.hhreco.recognition.FeatureExtractor;
-import org.hhreco.recognition.HHRecognizer;
-import org.hhreco.recognition.TimedStroke;
-import org.hhreco.toolbox.ApproximateStrokeFilter;
-import org.hhreco.toolbox.InterpolateStrokeFilter;
-
 import srl.core.exception.InvalidParametersException;
 import srl.core.sketch.Point;
 import srl.core.sketch.Segmentation;
@@ -542,17 +535,7 @@ public class PaleoFeatureExtractor {
 		m_featureVector.add(cali.Tl_Pch(), "CALI_TL_PCH"); // 50
 		m_featureVector.add(cali.Vm_Hbb(), "CALI_VM_HBB"); // 60
 
-		/* HHReco Features */
-		FeatureExtractor[] extractors = HHRecognizer.defaultFeatureExtractors();
-		TimedStroke s = toTimedStroke(m_features.getOrigStroke());
-		TimedStroke[] ss = new TimedStroke[1];
-		ss[0] = s;
-		ApproximateStrokeFilter approx = new ApproximateStrokeFilter(1.0);
-		InterpolateStrokeFilter interp = new InterpolateStrokeFilter(10.0);
-		ss = HHRecognizer.preprocess(ss, approx, interp, null);
-		FeatureSet fs = HHRecognizer.extractFeatures(extractors, ss);
-		for (int i = 0; i < fs.getFeatureCount(); i++)
-			m_featureVector.add(fs.getFeature(i), "Zernike" + (i + 1));
+		
 
 		/* Rubine Features */
 		RubineStroke rs = new RubineStroke(m_features.getOrigStroke(),
@@ -561,19 +544,7 @@ public class PaleoFeatureExtractor {
 			m_featureVector.add(rs.getFeatures().get(i), "Long" + (i + 1));
 	}
 
-	/**
-	 * Convert Stroke to HHReco TimedStroke
-	 * 
-	 * @param origStroke
-	 *            original Stroke
-	 * @return TimedStroke
-	 */
-	public static TimedStroke toTimedStroke(Stroke origStroke) {
-		TimedStroke s = new TimedStroke();
-		for (Point p : origStroke.getPoints())
-			s.addVertex(p.getX(), p.getY(), p.getTime());
-		return s;
-	}
+	
 
 	/**
 	 * Calculate line fit
