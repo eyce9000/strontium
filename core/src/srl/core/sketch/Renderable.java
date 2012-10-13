@@ -1,5 +1,5 @@
 /**
- * ShapePainter.java
+ * Renderable.java
  *
  * Revision History:<br>
  * Jul 1, 2008 bpaulson - File created

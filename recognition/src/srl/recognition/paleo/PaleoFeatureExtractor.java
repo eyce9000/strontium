@@ -56,7 +56,6 @@ import srl.segmentation.paleo.PaleoSegmenter;
 import srl.segmentation.paleo.WaveSegmenter;
 
 import weka.core.Attribute;
-import weka.core.DenseInstance;
 import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -298,7 +297,7 @@ public class PaleoFeatureExtractor {
 				throw new Exception("bad label: " + label);
 			vals[vals.length - 1] = classLabel;
 		}
-		return new DenseInstance(1.0, vals);
+		return new Instance(1.0, vals);
 	}
 
 	/**

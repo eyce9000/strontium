@@ -13,7 +13,6 @@ import srl.core.sketch.Stroke;
 
 
 import weka.core.Attribute;
-import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 
@@ -91,7 +90,7 @@ public class CivilAttributes {
 	private static Instance generateCivilFeatures_NEW(Sketch sketch,
 			Instances dataSet) {
 
-		Instance inst = new DenseInstance(dataSet.numAttributes());
+		Instance inst = new Instance(dataSet.numAttributes());
 		inst.setDataset(dataSet);
 
 		// Rubine-esque features

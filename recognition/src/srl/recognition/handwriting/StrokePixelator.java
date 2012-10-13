@@ -49,7 +49,6 @@ import srl.core.sketch.Stroke;
 
 
 
-import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 
@@ -182,7 +181,7 @@ public class StrokePixelator {
 
 		int[][] pixels = pixelizeSketch(sk, heightWidth);
 
-		Instance inst = new DenseInstance(dataSet.numAttributes());
+		Instance inst = new Instance(dataSet.numAttributes());
 
 		inst.setDataset(dataSet);
 
@@ -212,7 +211,7 @@ public class StrokePixelator {
 	 */
 	public static Instance getInstanceCivilSketch(Sketch sk, Instances dataSet) {
 
-		Instance inst = new DenseInstance(8);
+		Instance inst = new Instance(8);
 		inst.setDataset(dataSet);
 
 		return inst;
