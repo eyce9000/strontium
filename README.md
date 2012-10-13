@@ -20,11 +20,11 @@ Dependencies
 --------------
 In order to use the strontium library correctly, you must include the following libraries:
 
-1. OpenAWT - An implementation of java.awt.geom that runs on Android and on the JDK
-2. Jackson JSON - Used for serializing sketches to JSON
-3. Simple XML - Used for serializing sketches to XML
-4. Jama - Standard matrix library
-5. Weka - Machine learning library
+1. [OpenAWT](https://github.com/eyce9000/OpenAWT) - An implementation of java.awt.geom that runs on Android and on the JDK
+2. [Jackson JSON](http://jackson.codehaus.org/) - Used for serializing sketches to JSON
+3. [Simple XML](http://simple.sourceforge.net/) - Used for serializing sketches to XML
+4. [Jama](http://math.nist.gov/javanumerics/jama/) - Standard matrix library
+5. [Weka](http://www.cs.waikato.ac.nz/ml/weka/) - Machine learning library
 
 
 Simple Example
