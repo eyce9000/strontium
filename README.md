@@ -9,7 +9,7 @@ Strontium Library (SrL)
 The Strontium Library is a collection of sketch recognition libraries. It is split into 6 distinct pieces:
 
 1. Core - This contains core classes for collecting and storing sketches, including Sketch, Stroke, Point and Shape.
-2. Recognition - This contains several sketch recognition libraries, of particular interest is PaleoSketch
+2. Recognition - This contains several sketch recognition libraries, of particular interest is the basic shape recognizer [PaleoSketch](http://srlweb.cse.tamu.edu/srlng/research/project/1)
 3. Distributed – This contains client/server code for a messaging system for performing distributed sketch recognition.
 4. Legacy – This contains some legacy dependencies, not needed for any new application.
 5. Swing UI - This contains a few basic Java Swing user interface classes
@@ -26,6 +26,13 @@ In order to use the strontium library correctly, you must include the following 
 4. [Jama](http://math.nist.gov/javanumerics/jama/) - Standard matrix library
 5. [Weka](http://www.cs.waikato.ac.nz/ml/weka/) - Machine learning library
 
+Sample Applications
+------------
+To see what basic shape recognition can do, try out the following two applications:
+
+[PaleoSketch Online](http://srl-mechanix.appspot.com/) is an in-browser recognizer that you can try out. It performs recognition on a Google App Engine instance and returns recognition results.
+
+[Sketchpad](https://github.com/eyce9000/strontium/downloads) is a simple Android application that provides a drawing canvas that performs automatic basic shape recognition as you draw.
 
 Simple Example
 -------
