@@ -1,6 +1,6 @@
 COPYRIGHT NOTICE
 ----------
-We are still working on the license information for this project. Most code here is released under a BSD license, copyright the Sketch Recognition Lab of Texas A&M University.
+We are still working on the license information for this project. Most code here is released under a BSD license, copyright the [Sketch Recognition Lab](http://srlweb.cse.tamu.edu) of Texas A&M University.
 Where not indicated, please assume a BSD license. If you notice any inconsistencies please let us know as we are working to clean this code up.
 
 
@@ -14,6 +14,17 @@ The Strontium Library is a collection of sketch recognition libraries. It is spl
 4. Legacy – This contains some legacy dependencies, not needed for any new application.
 5. Swing UI - This contains a few basic Java Swing user interface classes
 6. Android UI - This contains a few basic Android user interface views
+
+
+Dependencies
+--------------
+In order to use the strontium library correctly, you must include the following libraries:
+
+1. OpenAWT - An implementation of java.awt.geom that runs on Android and on the JDK
+2. Jackson JSON - Used for serializing sketches to JSON
+3. Simple XML - Used for serializing sketches to XML
+4. Jama - Standard matrix library
+5. Weka - Machine learning library
 
 
 Simple Example

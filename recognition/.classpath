@@ -4,8 +4,6 @@
 	<classpathentry kind="lib" path="/Sr Core/lib/Jama-1.0.2.jar"/>
 	<classpathentry kind="lib" path="/Sr Core/lib/slf4j-api-1.6.4.jar"/>
 	<classpathentry kind="lib" path="lib/weka.jar"/>
-	<classpathentry kind="lib" path="lib/libsvm.jar"/>
-	<classpathentry kind="lib" path="lib/xercesImpl.jar"/>
 	<classpathentry kind="lib" path="lib/xml-apis.jar"/>
 	<classpathentry kind="lib" path="/Sr Core/lib/android.jar"/>
 	<classpathentry kind="lib" path="/Sr Core/lib/openawt.jar"/>

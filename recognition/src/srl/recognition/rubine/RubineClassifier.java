@@ -16,8 +16,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.apache.xml.serialize.OutputFormat;
-import org.apache.xml.serialize.XMLSerializer;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -650,7 +648,7 @@ public class RubineClassifier implements
 			createDOMTree(dom);
 
 			// Create the physical file
-			printToFile(dom, filename);
+			//printToFile(dom, filename);
 		} catch (ParserConfigurationException pce) {
 			System.out
 					.println("Error while trying to instantiate DocumentBuilder "
@@ -707,7 +705,7 @@ public class RubineClassifier implements
 	/**
 	 * This method uses Xerces specific classes prints the XML document to file.
 	 */
-	private void printToFile(Document dom, String filename) {
+	/*private void printToFile(Document dom, String filename) {
 		try {
 			// Print
 			OutputFormat format = new OutputFormat(dom);
@@ -725,7 +723,7 @@ public class RubineClassifier implements
 		} catch (IOException ie) {
 			ie.printStackTrace();
 		}
-	}
+	}*/
 
 	/**
 	 * Load classification weights and training data from a file

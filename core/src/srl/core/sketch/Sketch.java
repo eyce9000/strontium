@@ -1,4 +1,4 @@
-package srl.core.sketch;
+
 /*******************************************************************************
  *  Revision History:<br>
  *  SRL Member - File created
@@ -33,6 +33,8 @@ package srl.core.sketch;
  *  </pre>
  *  
  *******************************************************************************/
+
+package srl.core.sketch;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
