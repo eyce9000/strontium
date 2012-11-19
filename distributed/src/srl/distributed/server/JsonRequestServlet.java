@@ -44,7 +44,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig.Feature;
 import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 
-import srl.distributed.Serialize;
+import srl.distributed.DefaultMapperProvider;
+import srl.distributed.ObjectMapperProvider;
 import srl.distributed.messages.ErrorResponse;
 import srl.distributed.messages.Request;
 import srl.distributed.messages.Response;
@@ -53,10 +54,14 @@ import srl.distributed.messages.UnauthorizedResponse;
 @SuppressWarnings("serial")
 public class JsonRequestServlet extends HttpServlet{
 	private boolean debugActive;
-
+	private ObjectMapperProvider mapperProvider = new DefaultMapperProvider();
 
 	public void setDebugMode(boolean debug){
 		this.debugActive = debug;
+	}
+	
+	public ObjectMapperProvider getObjectMapperProvider(){
+		return mapperProvider;
 	}
 
 	@Override
@@ -64,7 +69,7 @@ public class JsonRequestServlet extends HttpServlet{
 		setDebugMode(true);
 
 
-		ObjectMapper mapper = Serialize.buildMapper();
+		ObjectMapper mapper = getObjectMapperProvider().getMapper();
 		
 		HttpSession session = req.getSession(true);
 		session.getId();
@@ -74,9 +79,9 @@ public class JsonRequestServlet extends HttpServlet{
 		try {
 			Response responseMessage;
 			try{
-				Request requestMessage = mapper.readValue(req.getInputStream(), Request.class);
+				ServerRequest requestMessage = mapper.readValue(req.getInputStream(), ServerRequest.class);
 
-				responseMessage = requestMessage.performService(session);
+				responseMessage = requestMessage.performService(new ServiceContext(req));
 			} 
 			catch (Throwable e){
 				if(debugActive){

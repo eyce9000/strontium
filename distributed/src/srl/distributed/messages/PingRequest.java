@@ -36,7 +36,10 @@ package srl.distributed.messages;
 
 import javax.servlet.http.HttpSession;
 
-public class PingRequest extends Request {
+import srl.distributed.server.ServerRequest;
+import srl.distributed.server.ServiceContext;
+
+public class PingRequest extends ServerRequest {
 	private long startTime;
 	
 	public PingRequest(long startTime){
@@ -60,7 +63,7 @@ public class PingRequest extends Request {
 
 
 	@Override
-	public Response performService(HttpSession clientSessionScope) {
+	public Response performService(ServiceContext context) {
 		// TODO Auto-generated method stub
 		return null;
 	}

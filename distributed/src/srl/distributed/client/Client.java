@@ -78,7 +78,8 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import srl.distributed.Serialize;
+import srl.distributed.DefaultMapperProvider;
+import srl.distributed.ObjectMapperProvider;
 import srl.distributed.client.exceptions.ClientException;
 import srl.distributed.messages.ClientErrorResponse;
 import srl.distributed.messages.Request;
@@ -88,13 +89,12 @@ import srl.distributed.messages.Response;
 
 public class Client {
 	private static final int DEFAULT_TIMEOUT = 10000;
-	private HttpClient httpClient = new DefaultHttpClient();
-
-	private CookieStore cookieStore = new BasicCookieStore();
-	private HttpContext localContext = new BasicHttpContext();
+	private DefaultHttpClient httpClient = new DefaultHttpClient();
+	
 	private Writer messageLog = null;
 	private boolean messageTimingEnabled = false;
 	private Timing messageTiming = new Timing();
+	private ObjectMapperProvider mapperProvider = new DefaultMapperProvider();
 
 	private URL serverAddress;
 	
@@ -104,7 +104,6 @@ public class Client {
 	
 	public Client(URL address){
 		serverAddress = address;
-		localContext.setAttribute(ClientContext.COOKIE_STORE, cookieStore);
 		httpClient = getNewHttpClient();
 		setTimeout(DEFAULT_TIMEOUT);
 	}
@@ -112,23 +111,27 @@ public class Client {
 		try {
 			FileInputStream fis = new FileInputStream(file);
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			cookieStore = (CookieStore)ois.readObject();
+			httpClient.setCookieStore((CookieStore)ois.readObject());
 		} catch (Exception e) {
 			e.printStackTrace();
-			cookieStore = new BasicCookieStore();
 		} 
-
-		localContext.setAttribute(ClientContext.COOKIE_STORE, cookieStore);
 	}
 	public void storeCookies(File file){
 		try{
 			FileOutputStream fos = new FileOutputStream(file);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(cookieStore);
+			oos.writeObject(httpClient.getCookieStore());
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+
+	public DefaultHttpClient getHttpClient(){
+		return httpClient;
+	}
+	public void setObjectMapperProvider(ObjectMapperProvider provider){
+		mapperProvider = provider;
 	}
 	public void setMessageLoggingEnabled(File file) throws IOException{
 		messageLog = new FileWriter(file);
@@ -147,15 +150,6 @@ public class Client {
 			return connected;
 		}
 	}
-	public boolean testConnection(){
-		try{
-			return sendRequest(new srl.distributed.messages.PingRequest(System.currentTimeMillis())).getSuccess();
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		return false;
-	}
 	private void setConnected(boolean connected){
 		synchronized(lock){
 			this.connected = connected;
@@ -166,6 +160,12 @@ public class Client {
 		HttpConnectionParams.setConnectionTimeout(params, timeout);
 		HttpConnectionParams.setSoTimeout(params, timeout);
 	}
+	public synchronized <T extends Response> T sendRequest(Request request, Class<T> requestClass){
+		return (T)sendRequest(request);
+	}
+	public synchronized <T extends Response> T sendRequest(Request request, Class<T> requestClass, int timeout){
+		return (T)sendRequest(request,timeout);
+	}
 	public synchronized Response sendRequest(Request request, int timeout){
 		setTimeout(timeout);
 		Response response = sendRequest(request);
@@ -173,12 +173,13 @@ public class Client {
 		return response;
 	}
 	
+	
 	public synchronized Response sendRequest(Request request){
 		setConnected(false);
 		HttpPost post = new HttpPost(serverAddress.toString());
 		HttpEntity responseEntity = null;
 		Response message = null;
-		ObjectMapper mapper = Serialize.buildMapper();
+		ObjectMapper mapper = mapperProvider.getMapper();
 		
 		messageTiming.reset();
 		
@@ -204,7 +205,7 @@ public class Client {
 			entity.setContentType("application/json");
 			HttpResponse response;
 			synchronized(httpClient){
-				response = httpClient.execute(post,localContext);
+				response = httpClient.execute(post);
 			}
 			
 			if(messageTimingEnabled)
@@ -251,7 +252,7 @@ public class Client {
 			messageTiming.endDeserialization();
 		return message;
 	}
-	private HttpClient getNewHttpClient() {
+	private DefaultHttpClient getNewHttpClient() {
 	    try {
 	        KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
 	        trustStore.load(null, null);

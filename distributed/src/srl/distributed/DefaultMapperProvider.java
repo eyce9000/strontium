@@ -32,48 +32,35 @@
  *  </pre>
  *  
  *******************************************************************************/
-package srl.distributed.messages;
+package srl.distributed;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import org.codehaus.jackson.annotate.JsonMethod;
+import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
+import org.codehaus.jackson.annotate.JsonTypeInfo.As;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.SerializationConfig.Feature;
+import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
+import org.openawt.Color;
+import org.openawt.svg.Style;
 
-import javax.servlet.http.HttpSession;
+import srl.core.serialization.TypeAttributeMixin;
 
-public class BatchRequest extends Request {
-	private List<Request> requests;
-	
-	public BatchRequest(){};
-	public BatchRequest(Request...messages){
-		this.requests = Arrays.asList(messages);
+public class DefaultMapperProvider implements ObjectMapperProvider{
+	private static ObjectMapper mapper;
+	static {
+		mapper = new ObjectMapper();
+		mapper.setVisibility(JsonMethod.ALL, Visibility.NONE);
+		mapper.setVisibility(JsonMethod.FIELD, Visibility.ANY);
+		mapper.configure(Feature.INDENT_OUTPUT, true);
+		mapper.configure(Feature.WRITE_NULL_MAP_VALUES, false);
+		mapper.enableDefaultTypingAsProperty(ObjectMapper.DefaultTyping.JAVA_LANG_OBJECT, "@type");
+		mapper.getSerializationConfig().addMixInAnnotations(Color.class, TypeAttributeMixin.class);
+		mapper.getDeserializationConfig().addMixInAnnotations(Color.class, TypeAttributeMixin.class);
+		mapper.getSerializationConfig().addMixInAnnotations(Style.class, TypeAttributeMixin.class);
+		mapper.getDeserializationConfig().addMixInAnnotations(Style.class, TypeAttributeMixin.class);
 	}
-	
-	public BatchRequest(List<Request> messages){
-		this.requests = messages;
-	}
-	
-
-	/**
-	 * @return the messages
-	 */
-	public List<Request> getRequests() {
-		return requests;
-	}
-	/**
-	 * @param messages the messages to set
-	 */
-	public void setRequests(List<Request> messages) {
-		this.requests = messages;
-	}
-
-	
-	
 	@Override
-	public Response performService(HttpSession session) {
-		List<Response> responses = new ArrayList<Response>();
-		for(Request message:requests){
-			responses.add(message.performService(session));
-		}
-		return new BatchResponse(responses);
+	public ObjectMapper getMapper() {
+		return mapper; 
 	}
 }
