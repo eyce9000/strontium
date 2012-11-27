@@ -45,7 +45,7 @@
             <classpath refid="srl.core.classpath"/>
         </javac>
 		<mkdir dir="../build" />
-	    <jar destfile="../build/${ant.project.name}-${major-version-number}.jar"
+	    <jar destfile="../build/${ant.project.name}-${major-version-number}-${build.number}.jar"
 	         basedir="bin"
 	         includes="**/*.class,**/*.java"
 	         />
