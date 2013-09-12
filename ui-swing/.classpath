@@ -8,6 +8,6 @@
 	<classpathentry kind="lib" path="/Sr Core/lib/slf4j-api-1.6.4.jar"/>
 	<classpathentry kind="lib" path="/Sr Core/lib/jackson-all-1.9.2.jar"/>
 	<classpathentry kind="lib" path="/Sr Core/lib/simple-xml-2.6.5.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/openawt"/>
+	<classpathentry kind="lib" path="/Sr Core/lib/openawt-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
