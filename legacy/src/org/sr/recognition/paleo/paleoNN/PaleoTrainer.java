@@ -60,8 +60,10 @@ import srl.recognition.paleo.multistroke.MultiStrokePaleoRecognizer;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
+import weka.classifiers.functions.MultilayerPerceptron;
 import org.sr.legacy.serialization.SousaReader;
 import org.sr.legacy.serialization.SousaConverter;
+
 
 /**
  * Trainer for the neural network (creates the ARFF file)
@@ -339,6 +341,7 @@ public class PaleoTrainer {
 	 */
 	public static void main(String[] args) throws Exception {
 		PaleoTrainer t = new PaleoTrainer(new File(args[0]), new File(args[1]));
+		MultilayerPerceptron.main(new String[]{"-t",args[1],"-d",args[2]});
 	}
 
 }
