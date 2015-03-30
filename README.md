@@ -42,7 +42,21 @@ Then add these dependencies:
   <artifactId>sr-rec</artifactId>
   <version>1.0.0</version>
 </dependency>
-
+<dependency>
+  <groupId>com.github.eyce9000</groupId>
+  <artifactId>sr-distributed</artifactId>
+  <version>1.0.0</version>
+</dependency>
+<dependency>
+  <groupId>com.github.eyce9000</groupId>
+  <artifactId>sr-ui-swing</artifactId>
+  <version>1.0.0</version>
+</dependency>
+<dependency>
+  <groupId>com.github.eyce9000</groupId>
+  <artifactId>sr-ui-android</artifactId>
+  <version>1.0.0</version>
+</dependency>
 ```
 
 Sample Applications
