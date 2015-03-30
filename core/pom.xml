@@ -60,7 +60,7 @@
 			<id>internal.repo</id>
 			<uniqueVersion>true</uniqueVersion>
 			<name>Temporary Staging Repository</name>
-			<url>file://${project.build.directory}/../../mvn-repo</url>
+			<url>file://${project.build.directory}/../../../mvn-repo</url>
 		</repository>
 	</distributionManagement>
 

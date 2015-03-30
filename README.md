@@ -15,16 +15,35 @@ The Strontium Library is a collection of sketch recognition libraries. It is spl
 5. Swing UI - This contains a few basic Java Swing user interface classes
 6. Android UI - This contains a few basic Android user interface views
 
+Use as Maven Dependency
+----------------------
+In order to use this library as a maven dependency you will need to add the following repository:
+```xml
+<repositories>
+  <repository>
+    <id>eyce9000-mvn-repo</id>
+    <url>https://raw.github.com/eyce9000/mvn-repo/head/</url>
+    <snapshots>
+      <enabled>true</enabled>
+      <updatePolicy>always</updatePolicy>
+    </snapshots>
+  </repository>
+</repositories>
+```
+Then add these dependencies:
+```xml
+<dependency>
+  <groupId>com.github.eyce9000</groupId>
+  <artifactId>sr-core</artifactId>
+  <version>1.0.0</version>
+</dependency>
+<dependency>
+  <groupId>com.github.eyce9000</groupId>
+  <artifactId>sr-rec</artifactId>
+  <version>1.0.0</version>
+</dependency>
 
-Dependencies
---------------
-In order to use the strontium library correctly, you must include the following libraries:
-
-1. [OpenAWT](https://github.com/eyce9000/OpenAWT) - An implementation of java.awt.geom that runs on Android and on the JDK
-2. [Jackson JSON](http://jackson.codehaus.org/) - Used for serializing sketches to JSON
-3. [Simple XML](http://simple.sourceforge.net/) - Used for serializing sketches to XML
-4. [Jama](http://math.nist.gov/javanumerics/jama/) - Standard matrix library
-5. [Weka](http://www.cs.waikato.ac.nz/ml/weka/) - Machine learning library
+```
 
 Sample Applications
 ------------
