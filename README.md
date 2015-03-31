@@ -1,6 +1,6 @@
 COPYRIGHT NOTICE
 ----------
-We are still working on the license information for this project. Most code here is released under a BSD license, copyright the [Sketch Recognition Lab](http://srlweb.cse.tamu.edu) of Texas A&M University.
+We are still working on the license information for this project. Most code here is released under a BSD license, copyright the [Sketch Recognition Lab](http://srl.tamu.edu/) of Texas A&M University.
 Where not indicated, please assume a BSD license. If you notice any inconsistencies please let us know as we are working to clean this code up.
 
 
@@ -9,7 +9,7 @@ Strontium Library (SrL)
 The Strontium Library is a collection of sketch recognition libraries. It is split into 6 distinct pieces:
 
 1. Core - This contains core classes for collecting and storing sketches, including Sketch, Stroke, Point and Shape.
-2. Recognition - This contains several sketch recognition libraries, of particular interest is the basic shape recognizer [PaleoSketch](http://srlweb.cse.tamu.edu/srlng/research/project/1)
+2. Recognition - This contains several sketch recognition libraries, of particular interest is the basic shape recognizer [PaleoSketch](http://dl.acm.org/citation.cfm?id=1378775)
 3. Distributed – This contains client/server code for a messaging system for performing distributed sketch recognition.
 4. Legacy – This contains some legacy dependencies, not needed for any new application.
 5. Swing UI - This contains a few basic Java Swing user interface classes
@@ -61,11 +61,9 @@ Then add these dependencies:
 
 Sample Applications
 ------------
-To see what basic shape recognition can do, try out the following two applications:
+To see what basic shape recognition can do, try out the following application:
 
 [PaleoSketch Online](http://srl-mechanix.appspot.com/) is an in-browser recognizer that you can try out. It performs recognition on a Google App Engine instance and returns recognition results.
-
-[Sketchpad](https://github.com/eyce9000/strontium/downloads) is a simple Android application that provides a drawing canvas that performs automatic basic shape recognition as you draw.
 
 Simple Example
 -------
@@ -90,7 +88,7 @@ The following example shows how to create a sketch object, add a stroke made up 
 	PaleoSketchRecognizer recognizer = new PaleoSketchRecognizer(PaleoConfig.allOn());
 	IRecognition result = recognizer.recognize(sketch.getFirstStroke());
 	
-	if(result.getBestShape().label.equalsLowerCase("line"))
+	if(result.getBestShape().getInterpretation().label.equalsLowerCase("line"))
 	  System.out.println("Correctly recognized as a line");
 ```````
 
