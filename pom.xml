@@ -13,6 +13,8 @@
     <modules>
         <module>sr-core</module>
         <module>sr-rec</module>
+        <module>sr-distributed</module>
+        <module>sr-legacy</module>
         <module>sr-ui-android</module>
         <module>sr-ui-swing</module>
     </modules>
