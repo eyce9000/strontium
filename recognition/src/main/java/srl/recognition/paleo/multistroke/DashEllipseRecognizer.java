@@ -41,8 +41,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
-import srl.core.sketch.SComponent;
 import srl.core.sketch.Shape;
 import srl.core.sketch.Stroke;
 import srl.core.sketch.comparators.TimePeriodComparator;
@@ -50,9 +48,9 @@ import srl.core.util.IsAConstants;
 import srl.recognition.paleo.ArcFit;
 import srl.recognition.paleo.EllipseFit;
 import srl.recognition.paleo.Fit;
-import srl.recognition.paleo.Thresholds;
 import srl.recognition.paleo.OrigPaleoSketchRecognizer;
 import srl.recognition.paleo.PaleoConfig;
+import srl.recognition.paleo.Thresholds;
 
 
 /**

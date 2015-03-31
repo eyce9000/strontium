@@ -36,15 +36,11 @@
 package srl.recognition.paleo;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 import org.openawt.svg.SVGShape;
 import org.openawt.svg.Style;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.openawt.svg.SVGBuilder;
 
 import srl.core.sketch.IBeautifiable;
 import srl.core.sketch.Renderable;

@@ -45,7 +45,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-
 import srl.core.sketch.Point;
 import srl.core.sketch.Segmentation;
 import srl.core.sketch.Shape;
@@ -53,7 +52,6 @@ import srl.core.sketch.Stroke;
 import srl.core.util.IsAConstants;
 import srl.recognition.IRecognitionResult;
 import srl.recognition.paleo.Fit;
-import srl.recognition.paleo.Thresholds;
 import srl.recognition.recognizer.IRecognizer;
 
 

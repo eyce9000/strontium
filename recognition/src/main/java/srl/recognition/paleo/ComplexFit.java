@@ -35,14 +35,11 @@
  */
 package srl.recognition.paleo;
 
-import org.openawt.geom.GeneralPath;
-import org.openawt.svg.SVGGroup;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openawt.svg.SVGGroup;
 
-import srl.core.sketch.IBeautifiable;
 import srl.core.sketch.Shape;
 import srl.core.sketch.Stroke;
 import srl.core.util.IsAConstants;

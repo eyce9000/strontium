@@ -38,7 +38,6 @@
 package srl.recognition.paleo;
 
 import srl.core.exception.InvalidParametersException;
-import srl.core.sketch.Point;
 import srl.core.sketch.Segmentation;
 import srl.core.sketch.Stroke;
 import srl.patternrec.classifiers.core.FVector;
@@ -47,7 +46,6 @@ import srl.recognition.rubine.RubineStroke;
 import srl.segmentation.combination.PolylineCombinationSegmenter;
 import srl.segmentation.paleo.PaleoSegmenter;
 import srl.segmentation.paleo.WaveSegmenter;
-
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;

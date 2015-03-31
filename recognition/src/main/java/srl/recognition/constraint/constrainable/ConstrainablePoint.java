@@ -40,6 +40,7 @@ package srl.recognition.constraint.constrainable;
 import srl.core.sketch.BoundingBox;
 import srl.core.sketch.Point;
 import srl.core.sketch.Shape;
+import srl.recognition.constraint.IConstrainable;
 
 
 /**

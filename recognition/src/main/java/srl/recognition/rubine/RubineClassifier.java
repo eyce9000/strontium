@@ -1,7 +1,6 @@
 package srl.recognition.rubine;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +29,6 @@ import srl.recognition.IRecognitionResult;
 import srl.recognition.RecognitionResult;
 import srl.recognition.recognizer.IRecognizer;
 import srl.recognition.rubine.RubineStroke.FeatureSet;
-
 import Jama.Matrix;
 
 

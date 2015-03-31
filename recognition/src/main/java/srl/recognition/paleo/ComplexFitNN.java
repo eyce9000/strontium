@@ -40,7 +40,6 @@ package srl.recognition.paleo;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import org.openawt.svg.SVGGroup;
 
 import srl.core.sketch.Interpretation;
@@ -161,7 +160,7 @@ public class ComplexFitNN extends Fit {
 	protected void generateComplex() {
 		m_shape = new SVGGroup();
 		for(Shape shape:m_subShapes){
-			((SVGGroup)m_shape).addShape(shape.getBeautifiedShape());
+			((SVGGroup)m_shape).addShape(shape.toSVGShape());
 		}
 	}
 	

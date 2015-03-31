@@ -35,12 +35,12 @@
  */
 package srl.recognition.paleo;
 
-import org.openawt.geom.Line2D;
-import org.openawt.geom.Point2D;
-import org.openawt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openawt.geom.Line2D;
+import org.openawt.geom.Point2D;
+import org.openawt.geom.Rectangle2D;
 
 import srl.core.sketch.BoundingBox;
 import srl.core.sketch.Point;
@@ -49,7 +49,6 @@ import srl.core.sketch.Stroke;
 import srl.math.Filtering;
 import srl.math.LeastSquares;
 import srl.segmentation.paleo.RevolutionSegmenter;
-
 import Jama.Matrix;
 
 /**

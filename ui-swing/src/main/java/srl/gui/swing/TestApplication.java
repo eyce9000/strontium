@@ -45,6 +45,7 @@ import java.io.File;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import srl.core.sketch.Shape;
 import srl.core.sketch.Sketch;
 import srl.core.sketch.controllers.UndoSketchController;
 import srl.recognition.IRecognitionResult;
@@ -74,6 +75,8 @@ public class TestApplication extends JFrame implements WindowListener {
 			final PaleoSketchRecognizer psr = new PaleoSketchRecognizer(PaleoConfig.allOn());
 			public void mouseReleased(MouseEvent e) {
 				IRecognitionResult res = psr.recognize(canvas.getSketch().getLastStroke());
+				Shape shape = res.getBestShape();
+				canvas.setRecResult(shape);
 				System.out.println("paleo says: " + res.getBestShape().getInterpretation().label);
 			}
 		});

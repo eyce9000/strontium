@@ -3,7 +3,6 @@ package srl.recognition.grouping;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import srl.core.sketch.Point;
 import srl.core.sketch.Shape;
 import srl.core.sketch.Stroke;

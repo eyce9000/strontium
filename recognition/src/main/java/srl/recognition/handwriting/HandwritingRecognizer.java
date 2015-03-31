@@ -43,7 +43,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,8 +55,6 @@ import srl.recognition.grouping.CivilGrouper;
 import srl.recognition.grouping.HandwritingGrouper;
 import srl.recognition.recognizer.OverTime;
 import srl.recognition.recognizer.OverTimeException;
-
-
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Attribute;
 import weka.core.Instance;

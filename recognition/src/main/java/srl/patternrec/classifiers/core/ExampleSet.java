@@ -45,7 +45,6 @@ import java.io.IOException;
 import java.util.Vector;
 
 import srl.patternrec.classifiers.core.helper.MatrixHelper;
-
 import Jama.Matrix;
 
 /**

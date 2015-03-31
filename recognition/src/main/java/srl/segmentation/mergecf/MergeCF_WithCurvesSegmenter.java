@@ -43,7 +43,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-
 import srl.core.exception.InvalidParametersException;
 import srl.core.sketch.Point;
 import srl.core.sketch.Segmentation;

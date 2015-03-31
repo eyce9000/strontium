@@ -37,13 +37,13 @@
  */
 package srl.segmentation.combination;
 
-import org.openawt.geom.Line2D;
-import org.openawt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.openawt.geom.Line2D;
+import org.openawt.geom.Rectangle2D;
 
 import srl.core.exception.InvalidParametersException;
 import srl.core.sketch.ISegmenter;
@@ -56,7 +56,6 @@ import srl.recognition.paleo.PaleoConfig;
 import srl.recognition.paleo.PaleoSketchRecognizer;
 import srl.segmentation.AbstractSegmenter;
 import srl.segmentation.sezgin.SezginSegmenter;
-
 import Jama.Matrix;
 
 /**

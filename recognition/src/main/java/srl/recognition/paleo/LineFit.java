@@ -35,14 +35,11 @@
  */
 package srl.recognition.paleo;
 
+import java.util.ArrayList;
+
 import org.openawt.geom.Line2D;
 import org.openawt.svg.SVGLine;
 import org.openawt.svg.SVGShape;
-
-import java.util.ArrayList;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import srl.core.sketch.IBeautifiable;
 import srl.core.sketch.Shape;

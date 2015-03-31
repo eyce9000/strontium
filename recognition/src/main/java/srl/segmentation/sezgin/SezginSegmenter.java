@@ -37,7 +37,6 @@
  */
 package srl.segmentation.sezgin;
 
-import org.openawt.geom.Line2D;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -47,6 +46,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.openawt.geom.Line2D;
 
 import srl.core.exception.InvalidParametersException;
 import srl.core.sketch.ISegmenter;

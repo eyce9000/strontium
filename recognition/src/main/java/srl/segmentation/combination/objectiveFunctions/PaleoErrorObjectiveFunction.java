@@ -3,7 +3,6 @@ package srl.segmentation.combination.objectiveFunctions;
 import java.util.Collections;
 import java.util.List;
 
-
 import srl.core.sketch.Point;
 import srl.core.sketch.Stroke;
 import srl.recognition.paleo.Fit;

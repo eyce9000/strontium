@@ -35,7 +35,9 @@
  */
 package srl.recognition.paleo;
 
-import org.openawt.Shape;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openawt.geom.AffineTransform;
 import org.openawt.geom.Ellipse2D;
 import org.openawt.geom.GeneralPath;
@@ -43,12 +45,6 @@ import org.openawt.geom.Line2D;
 import org.openawt.geom.Point2D;
 import org.openawt.svg.SVGPath;
 import org.openawt.svg.SVGShape;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import srl.core.sketch.Stroke;
 import srl.core.util.IsAConstants;

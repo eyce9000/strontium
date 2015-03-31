@@ -41,7 +41,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import srl.core.exception.InvalidParametersException;
 import srl.core.sketch.Segmentation;
 import srl.core.sketch.Shape;

@@ -37,12 +37,12 @@
  */
 package srl.segmentation.douglaspeucker;
 
-import org.openawt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
+import org.openawt.geom.Line2D;
 
 import srl.core.exception.InvalidParametersException;
 import srl.core.sketch.ISegmenter;

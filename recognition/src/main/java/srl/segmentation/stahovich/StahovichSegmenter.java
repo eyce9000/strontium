@@ -1,10 +1,10 @@
 package srl.segmentation.stahovich;
 
-import org.openawt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.openawt.geom.Line2D;
 
 import srl.core.exception.InvalidParametersException;
 import srl.core.sketch.Point;

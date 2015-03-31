@@ -67,7 +67,7 @@ public class SketchPanel extends JPanel implements MouseListener,
 
 	protected Color currentColor;
 
-	protected Shape testShape;
+	protected Shape recResult;
 
 	protected Style drawStyle = new Style().setFill(Color.NONE).setStroke(Color.BLACK);
 
@@ -96,6 +96,18 @@ public class SketchPanel extends JPanel implements MouseListener,
 	public void setSketch(Sketch s) {
 		sketchController.setSketch(s);
 		this.revalidate();
+		repaint();
+	}
+	
+	public void setRecognitionResult(Shape result){
+		recResult = result;
+		this.revalidate();
+		repaint();
+	}
+	
+	public void clearRecognitionResult(){
+		recResult = null;
+		revalidate();
 		repaint();
 	}
 
@@ -145,6 +157,9 @@ public class SketchPanel extends JPanel implements MouseListener,
 		ShapePainter.draw(g2, sketchController.getSketch().toSVGShape(), null);
 		if(currentStroke!=null)
 			ShapePainter.draw(g2, currentStroke.toSVGShape(),drawStyle);
+		ShapePainter.setColor(g2, Color.RED);
+		if(recResult!=null)
+			ShapePainter.draw(g2, recResult.toSVGShape(),drawStyle);
 	}
 
 	public void setStrokeWidth(float width) {
@@ -156,8 +171,9 @@ public class SketchPanel extends JPanel implements MouseListener,
 	}
 
 	public void clear() {
-		sketchController.clearSketch();
+		recResult = null;
 		currentStroke = null;
+		sketchController.clearSketch();
 	}
 	@Override
 	public void onSketchModified(Sketch sketch) {

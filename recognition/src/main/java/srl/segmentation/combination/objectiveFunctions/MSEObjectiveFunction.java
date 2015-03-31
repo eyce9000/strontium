@@ -1,15 +1,15 @@
 package srl.segmentation.combination.objectiveFunctions;
 
-import org.openawt.geom.Line2D;
-import org.openawt.geom.Rectangle2D;
 import java.util.Collections;
 import java.util.List;
+
+import org.openawt.geom.Line2D;
+import org.openawt.geom.Rectangle2D;
 
 import srl.core.sketch.Point;
 import srl.core.sketch.Stroke;
 import srl.math.LeastSquares;
 import srl.math.PerpendicularBisector;
-
 import Jama.Matrix;
 
 /**

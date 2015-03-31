@@ -41,6 +41,7 @@ import java.awt.event.MouseListener;
 import javax.swing.JLayeredPane;
 import javax.swing.OverlayLayout;
 
+import srl.core.sketch.Shape;
 import srl.core.sketch.Sketch;
 import srl.core.sketch.controllers.SketchController;
 
@@ -58,6 +59,7 @@ public class SketchCanvas extends JLayeredPane implements MouseListener {
 
 	protected BackgroundImagePanel background;
 	protected SketchPanel drawPanel;
+	protected Shape recResult;
 
 	public SketchCanvas() {
 		this(new Sketch());
@@ -78,6 +80,13 @@ public class SketchCanvas extends JLayeredPane implements MouseListener {
 
 		drawPanel.addMouseListener(this);
 	}
+	public void setRecResult(Shape result){
+		drawPanel.setRecognitionResult(result);
+	}
+	public void clearRecResult(){
+		drawPanel.clearRecognitionResult();
+	}
+	
 	public void setSketch(Sketch s) {
 		drawPanel.setSketch(s);
 	}

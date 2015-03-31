@@ -39,9 +39,6 @@ import org.openawt.geom.GeneralPath;
 import org.openawt.geom.Point2D;
 import org.openawt.svg.SVGPath;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 
 /**

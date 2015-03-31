@@ -40,9 +40,6 @@ package srl.recognition.paleo;
 import org.openawt.geom.Rectangle2D;
 import org.openawt.svg.SVGRectangle;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import srl.core.util.IsAConstants;
 
 

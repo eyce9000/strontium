@@ -42,6 +42,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import srl.core.sketch.Shape;
 import srl.core.sketch.Stroke;
 import srl.patternrec.classifiers.core.CResult;
@@ -57,9 +60,6 @@ import srl.recognition.paleo.StrokeFeatures;
 import srl.recognition.recognizer.IRecognizer;
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Instance;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Neural network version of Paleo

@@ -42,11 +42,7 @@ import org.openawt.geom.GeneralPath;
 import org.openawt.geom.Line2D;
 import org.openawt.geom.Rectangle2D;
 import org.openawt.svg.SVGPath;
-import org.openawt.svg.SVGRectangle;
 import org.openawt.svg.SVGShape;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import srl.core.sketch.Point;
 import srl.core.sketch.Segmentation;

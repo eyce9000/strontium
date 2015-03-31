@@ -3,7 +3,6 @@ package srl.segmentation.raySquared;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import srl.core.exception.InvalidParametersException;
 import srl.core.sketch.ISegmenter;
 import srl.core.sketch.Segmentation;

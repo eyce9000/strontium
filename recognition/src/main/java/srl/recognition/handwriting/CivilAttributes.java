@@ -9,9 +9,6 @@ import srl.core.sketch.BoundingBox;
 import srl.core.sketch.Point;
 import srl.core.sketch.Sketch;
 import srl.core.sketch.Stroke;
-
-
-
 import weka.core.Attribute;
 import weka.core.Instance;
 import weka.core.Instances;

@@ -40,7 +40,6 @@ package srl.segmentation.paleo;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import srl.core.sketch.ISegmenter;
 import srl.core.sketch.Interpretation;
 import srl.core.sketch.Segmentation;

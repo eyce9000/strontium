@@ -197,7 +197,7 @@ public class Shape extends SContainer implements IClassifiable, IBeautifiable {
 	 * 
 	 **************************/
 
-	protected transient Type beautificationType;
+	protected transient Type beautificationType = Type.NONE;
 	protected transient SVGShape beautifiedShape;
 	protected transient Image beautifiedImage;
 	protected transient BoundingBox beautifiedImageBBox;
@@ -218,12 +218,6 @@ public class Shape extends SContainer implements IClassifiable, IBeautifiable {
 	}
 
 	@Override
-	public SVGShape getBeautifiedShape() {
-		return beautifiedShape;
-	}
-
-
-	@Override
 	public void setBeautificationType(Type type) {
 		beautificationType = type;
 	}
@@ -239,12 +233,17 @@ public class Shape extends SContainer implements IClassifiable, IBeautifiable {
 		beautifiedShape = shape;
 	}
 
+	@Override
+	public SVGShape getBeautifiedShape() {
+		return beautifiedShape;
+	}
 
 	private static TimePeriodComparator comparator = new TimePeriodComparator();
 	@Override
 	public int compareTo(TimePeriod other) {
 		return comparator.compare(this, other);
 	}
+
 
 
 }

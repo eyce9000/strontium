@@ -4,15 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import srl.core.sketch.BoundingBox;
-import srl.core.sketch.SComponent;
 import srl.core.sketch.Shape;
 import srl.core.sketch.Stroke;
-import srl.core.sketch.comparators.StrokeTimeComparator;
 import srl.core.sketch.comparators.TimePeriodComparator;
 
 public class CivilGrouper {

@@ -38,7 +38,6 @@
 package srl.patternrec.classifiers.core;
 
 import srl.patternrec.classifiers.core.helper.MatrixHelper;
-
 import Jama.Matrix;
 
 /**

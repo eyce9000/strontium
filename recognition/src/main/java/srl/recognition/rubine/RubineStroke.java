@@ -1,8 +1,9 @@
 package srl.recognition.rubine;
 
-import org.openawt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.openawt.geom.Point2D;
 
 import srl.core.sketch.BoundingBox;
 import srl.core.sketch.Point;

@@ -37,11 +37,12 @@
  */
 package srl.recognition.paleo.cali;
 
-import org.openawt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+
+import org.openawt.geom.Line2D;
 
 import srl.core.sketch.Point;
 import srl.core.sketch.Stroke;

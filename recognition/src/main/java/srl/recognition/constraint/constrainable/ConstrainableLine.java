@@ -42,9 +42,12 @@ import java.util.List;
 import org.openawt.geom.Line2D;
 
 import srl.core.sketch.BoundingBox;
+import srl.core.sketch.IPoint;
+import srl.core.sketch.IShape;
 import srl.core.sketch.Point;
 import srl.core.sketch.Shape;
 import srl.core.sketch.Stroke;
+import srl.recognition.constraint.IConstrainable;
 
 
 /**

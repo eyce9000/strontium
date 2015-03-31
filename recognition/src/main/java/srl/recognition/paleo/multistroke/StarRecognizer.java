@@ -41,8 +41,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
-import srl.core.sketch.SComponent;
 import srl.core.sketch.Shape;
 import srl.core.sketch.Stroke;
 import srl.core.sketch.comparators.TimePeriodComparator;

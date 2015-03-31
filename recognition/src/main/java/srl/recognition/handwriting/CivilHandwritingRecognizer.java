@@ -49,8 +49,6 @@ import srl.core.sketch.Stroke;
 import srl.recognition.grouping.CivilGrouper;
 import srl.recognition.recognizer.OverTime;
 import srl.recognition.recognizer.OverTimeException;
-
-
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Attribute;
 import weka.core.Instance;

@@ -35,18 +35,13 @@
  */
 package srl.recognition.paleo;
 
-import org.openawt.geom.GeneralPath;
-import org.openawt.geom.Line2D;
-import org.openawt.geom.Path2D;
-import org.openawt.geom.Point2D;
-import org.openawt.svg.SVGGroup;
-import org.openawt.svg.SVGPath;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.openawt.geom.GeneralPath;
+import org.openawt.geom.Line2D;
+import org.openawt.geom.Point2D;
+import org.openawt.svg.SVGPath;
 
 import srl.core.sketch.Segmentation;
 import srl.core.sketch.Stroke;

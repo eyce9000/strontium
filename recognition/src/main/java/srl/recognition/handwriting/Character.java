@@ -40,7 +40,6 @@ package srl.recognition.handwriting;
 import java.util.Collections;
 import java.util.List;
 
-
 import srl.core.sketch.BoundingBox;
 import srl.core.sketch.Interpretation;
 import srl.core.sketch.Point;

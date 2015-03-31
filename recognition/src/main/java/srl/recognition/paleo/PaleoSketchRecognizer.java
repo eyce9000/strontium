@@ -42,8 +42,6 @@ package srl.recognition.paleo;
 import srl.core.sketch.Shape;
 import srl.core.sketch.Stroke;
 import srl.recognition.IRecognitionResult;
-import srl.recognition.paleo.Fit;
-import srl.recognition.paleo.PaleoConfig;
 import srl.recognition.paleo.paleoNN.PaleoNNRecognizer;
 
 /**

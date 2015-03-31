@@ -36,16 +36,14 @@
  */
 package srl.recognition.paleo;
 
-import org.openawt.geom.GeneralPath;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openawt.geom.Line2D;
 import org.openawt.geom.Point2D;
 import org.openawt.svg.SVGLine;
 import org.openawt.svg.SVGPolygon;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import srl.core.sketch.Point;
 import srl.core.sketch.Stroke;
 import srl.core.util.IsAConstants;
 

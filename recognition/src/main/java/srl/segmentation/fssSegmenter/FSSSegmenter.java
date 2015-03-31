@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-
 import srl.core.exception.InvalidParametersException;
 import srl.core.sketch.Point;
 import srl.core.sketch.Segmentation;

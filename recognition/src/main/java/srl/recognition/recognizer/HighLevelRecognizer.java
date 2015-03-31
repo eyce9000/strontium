@@ -39,7 +39,6 @@ package srl.recognition.recognizer;
 
 import java.util.List;
 
-
 import srl.core.sketch.Shape;
 import srl.recognition.IRecognitionResult;
 
